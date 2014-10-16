@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    
+    <TextView  
+	    style="@style/HeaderText"
+	    android:id="@+id/activityTitle"
+	    android:text="@string/lbl_schedule"
+    />
+    
+    <ScrollView
+        android:layout_width="fill_parent"
+    	android:layout_height="fill_parent">
+    	
+        <LinearLayout
+    		android:orientation="vertical"
+    		android:padding="10dip"
+    		android:layout_width="fill_parent"
+    		android:layout_height="wrap_content">
+
+	    <TextView
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="10dip"
+	        android:text="@string/lbl_selectcourse"
+	    />
+	
+	    <Spinner 
+	        android:id="@+id/spinner"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:drawSelectorOnTop="true"
+	        android:prompt="@string/lbl_course"
+	    />
+	    
+	    <TextView
+	        android:id="@+id/selected_course"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:text=""
+	    />
+	    
+	    <TextView
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="10dip"
+	        android:text="@string/lbl_selectyear"
+	    />
+	
+	    <Spinner 
+	        android:id="@+id/year_spinner"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:drawSelectorOnTop="true"
+	        android:prompt="@string/lbl_year"
+	    />
+	    
+	    <Button
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/button"
+			android:text="@string/lbl_getschedule"
+			android:background="@drawable/selector_button_blue"
+			style="@style/ButtonText"
+		/>
+	    
+	    </LinearLayout>
+    
+    </ScrollView>
+
+</LinearLayout>

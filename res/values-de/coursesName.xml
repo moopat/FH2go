@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="coursesName">
+	    <item>Angewandte Bioanalytik</item>
+		<item>Advanced Electronic Engineering</item>
+		<item>Informatonsmanagement</item>
+		<item>Architektur</item>
+		<item>Advanced Security Engineering</item>
+		<item>Ausstellungsdesign</item>
+		<item>Bauplanung und Bauwirtschaft</item>
+		<item>Biomedizinische Analytik</item>
+		<item>Baumanagement und Ingenieurbau</item>
+		<item>Bank- und Versicherungswirtschaft</item>
+		<item>Communication, Media and Interaction Design</item>
+        <item>Content-Strategie</item>
+        <item>Public Communication</item>
+		<item>Deutsch als Fremdsprache</item>
+		<item>Diätologie</item>
+        <item>Elektronik und Computer Engineering</item>
+		<item>eHealth Bachelor</item>
+		<item>eHealth Master</item>
+		<item>Engineering and Production Management</item>
+		<item>European Project and Public Management</item>
+		<item>Ergotherapie</item>
+		<item>Elektronik und Technologiemanagement</item>
+		<item>Energie, Verkehrs- und Umweltmanagement</item>
+		<item>Fahrzeugtechnik</item>
+		<item>Global Business Program</item>
+        <item>Gesundheitsinformatik / e-Health</item>
+		<item>Gesundheitsmanagement im Tourismus</item>
+		<item>Gesundheitsmanagement im Tourismus</item>
+		<item>Hebammen</item>
+		<item>International Hospitality and Spa Management</item>
+		<item>Industrial Design</item>
+		<item>Industrial Design</item>
+		<item>International Industrial Management (Berufsbegleitend)</item>
+		<item>International Industrial Management (Vollzeit)</item>
+		<item>Informationsmanagement</item>
+        <item>IT &amp; Mobile Security</item>
+		<item>Informationsdesign</item>
+		<item>IT-Recht und Management</item>
+		<item>International Supply Management</item>
+		<item>Internettechnik</item>
+		<item>Industriewirtschaft/Industrial Management (Berufsbegleitend)</item>
+		<item>Industriewirtschaft/Industrial Management (Vollzeit)</item>
+		<item>Journalismus und Public Relations</item>
+		<item>Luftfahrt/Aviation</item>
+		<item>Nachhaltiges Lebensmittelmanagement</item>
+		<item>Logopädie</item>
+		<item>Fahrzeugtechnik/Automotive Engineering</item>
+		<item>Luftfahrt/Aviation</item>
+		<item>Business in Emerging Markets</item>
+		<item>Energy und Transport Management</item>
+		<item>Management internationaler Geschäftsprozesse</item>
+        <item>Massenspektrometrie und molekulare Analytik</item>
+		<item>Angewandte Ernährungsmedizin</item>
+		<item>Physiotherapie</item>
+		<item>Produktionstechnik und Organisation</item>
+		<item>Radiologietechnologie</item>
+		<item>Soziale Arbeit</item>
+		<item>Studienbefähigungslehrgang Graz</item>
+		<item>Studienbefähigungslehrgang Kapfenberg</item>
+		<item>Soziale Arbeit</item>
+		<item>Software Design</item>
+	</string-array>
+</resources>

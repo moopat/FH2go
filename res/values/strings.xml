@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FH2go</string>
+    <string name="lbl_username">Username</string>
+    <string name="desc_username">The username you use to log into Actions and Webmail.</string>
+    <string name="lbl_password">Password</string>
+    <string name="desc_password">Password for your username.</string>
+    <string name="lbl_settings">Settings</string>
+    <string name="lbl_marks">Marks</string>
+    <string name="lbl_exams">Exams</string>
+    <string name="lbl_exam">Exam</string>
+    <string name="lbl_date">Date</string>
+    <string name="lbl_deadline">Closing date</string>
+    <string name="lbl_type">Type</string>
+    <string name="lbl_mode">Mode</string>
+    <string name="lbl_note">Note</string>
+    <string name="lbl_course">Course</string>
+    <string name="lbl_year">Year</string>
+    <string name="lbl_home">Home</string>
+    <string name="lbl_help">Help</string>
+    <string name="lbl_selectcourse">Please select a course.</string>
+    <string name="lbl_selectyear">Please select a year.</string>
+    <string name="lbl_getschedule">Show schedule</string>
+    <string name="lbl_chooseclass">Select class</string>
+    <string name="lbl_status">Status</string>
+    <string name="lbl_schedule">Schedule</string>
+    <string name="lbl_location">Location</string>
+    <string name="lbl_lecturer">Lecturer</string>
+    <string name="lbl_news">News</string>
+    <string name="lbl_changeclass">Change course or year</string>
+    <string name="lbl_refresh">Refresh</string>
+    <string name="desc_server">The URL of the API Server.</string>
+    <string name="lbl_about">About FH2go</string>
+    <string name="lbl_schedule_dialog">Details</string>
+    <string name="lbl_signoff">Sign off</string>
+    <string name="lbl_signup">Sign up</string>
+    <string name="lbl_mail">Send us an E-Mail</string>
+    <string name="lbl_facebook">Find us on Facebook</string>
+    <string name="lbl_nochangepermitted">You cannot change the exam status</string>
+    <string name="lbl_changedate">Change date</string>
+    <string name="lbl_faq">FAQ</string>
+    <string name="lblHideType">Hide this event type</string>
+    <string name="lblHiddenTypes">Hidden event types</string>
+    <string name="lblNone">None</string>
+    <string name="descHiddenTypes">Elements with event types listed here will not be listed in your schedule. To remove items from this list long-press them.</string>
+    <string name="hintHide">Enter the group/event type you want to hide. Filtering is case-sensitive!</string>
+    <string name="lblSave">Save</string>
+    <string name="lblCancel">Cancel</string>
+    <string name="lblUnhideType">Unhide this group</string>
+    <string name="msgNoHiddenTypes">No groups are hidden in the schedule.</string>
+    <string name="lblAnd">and</string>
+    <string name="lblOthers">others</string>
+
+    <string name="exam_takenplace">Taken place</string>
+    <string name="exam_signedoff">Signed off</string>
+    <string name="exam_registered">Registered</string>
+    <string name="exam_notregistered">Not registered</string>
+    <string name="exam_signedoffbyoffice">Signed off by office</string>
+    <string name="exam_registeredbyoffice">Registered by office</string>
+    
+    <string name="prog_wait">Please wait&#8230;</string>
+    
+    <string name="about_lbl_developers">Developers</string>
+    <string name="about_lbl_tutor">Tutor</string>
+    <string name="about_lbl_credits">Credits</string>
+    
+    <string name="msg_unknown">Unknown</string>
+    <string name="msg_nomailintent">No application for sending emails could be found.</string>
+    <string name="msg_prefschanged">Your changes have been saved.</string>
+    <string name="msg_noexams">No upcoming exams were found.</string>
+    <string name="msg_signedup">You were signed up for the exam.</string>
+    <string name="msg_signedoff">You were signed off the exam.</string>
+    <string name="msg_nostudents">No students were found for this class.</string>
+    <string name="msg_nomarks">No marks were found.</string>
+    <string name="msg_noclasses">No classes were found on this day.</string>
+    <string name="msg_nonews">No news can be found at this time.</string>
+    <string name="msg_error">An error occurred. Please check your network connection and try again.</string>
+    <string name="msg_incompletedata">Please complete your login data.</string>
+    <string name="msg_invaliddata">Your login data could not be verified.</string>
+    <string name="msg_incompleteserver">Please specify a server.</string>
+	<string name="msg_locked">Your account has been locked. Check your login data and try again in 15 minutes.</string>
+	
+	<string name="lbl_lastupdate">Last update:</string>
+	<string name="lbl_unknown">unknown</string>
+	
+	<string name="txtSignupFail">After signing up for an exam, please check if the star has turned yellow. If not, please use the website instead.</string>
+	<string name="txt_about">Please share any thoughts, feedback, or problems you come across via e-mail or Facebook.\n\nErrors and omissions excepted.</string>
+
+    <string name="lbl_login">Login</string>
+    <string name="info_login">Please enter the login data you use to log into Actions.</string>
+    <string name="login_incomplete">Please enter username and password.</string>
+    <string name="info_login_change">You can change or delete your credentials in the settings.</string>
+
+</resources>

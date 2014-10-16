@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/joanneumred"
+    android:padding="0dp"
+    >
+<ImageView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:src="@drawable/joanneum"
+    android:adjustViewBounds="true"
+    android:scaleType="fitXY"
+    android:paddingBottom="10dp"
+    />
+
+<GridView
+   android:background="@drawable/main_wallpaper"
+   android:id="@+id/grid"
+   android:listSelector="@drawable/selector_grid"
+   android:layout_width="fill_parent"
+   android:layout_height="fill_parent"
+   android:paddingLeft="5dp"
+   android:paddingRight="5dp"
+   android:paddingBottom="5dp"
+   android:paddingTop="15dp"
+   android:verticalSpacing="20dp"
+   android:horizontalSpacing="20dp"
+   android:numColumns="auto_fit"
+   android:columnWidth="90dp"
+   android:stretchMode="columnWidth"
+   android:gravity="center_horizontal"
+   
+	>
+</GridView>
+
+</LinearLayout>

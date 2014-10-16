@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/linearLayout1" 
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent" 
+	android:background="@color/white"
+	android:orientation="vertical">
+	<TextView  
+	    style="@style/HeaderText"
+	    android:id="@+id/activityTitle"
+	    android:text="@string/lblHideType"
+    />
+    <TextView android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:textColor="@color/black"
+              android:paddingLeft="10dp"
+              android:paddingRight="10dp"
+              android:paddingTop="3dp"
+              android:text="@string/hintHide"
+              />
+    
+    <EditText
+        	 android:id="@+id/group"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:paddingLeft="10dp"
+              android:paddingRight="10dp"
+              android:paddingTop="10dp"
+              android:paddingBottom="10dp"
+              android:layout_margin="10dp"
+              android:inputType="textCapCharacters"
+              android:textColor="@color/black"
+              />
+</LinearLayout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/linearLayout1" 
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent" 
+	android:orientation="vertical">
+	
+    <LinearLayout 
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:orientation="horizontal"
+	android:background="@drawable/bg_red"
+	>
+			<TextView  
+			    style="@style/HeaderText"
+			    android:id="@+id/activityMainTitle"
+			    android:layout_height="wrap_content"
+			    android:layout_width="0dip"
+			    android:layout_weight="1"
+			    android:gravity="left"
+		    />
+			
+			<ImageView
+			    android:padding="10dp"
+			    android:src="@drawable/ic_action_change"
+			    android:id="@+id/btn_chclass"
+			    android:layout_width="wrap_content" 
+				android:layout_height="fill_parent" 
+		    />
+			
+			<ImageView
+			    android:padding="10dp"
+			    android:src="@drawable/ic_action_calendar"
+			    android:id="@+id/btn_chdate"
+			    android:layout_width="wrap_content" 
+				android:layout_height="fill_parent" 
+		    />
+	        
+			<ImageView
+			    android:padding="10dp"
+			    android:src="@drawable/ic_action_refresh"
+			    android:id="@+id/btn_update"
+			    android:layout_width="wrap_content" 
+				android:layout_height="fill_parent" 
+		    />
+	</LinearLayout>
+	
+    <TableLayout 
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:stretchColumns="*"
+	android:background="@drawable/bg_blue"
+	>
+		<TableRow>
+			<TextView  
+			    style="@style/ScheduleDate"
+			    android:id="@+id/prev"
+			    android:text="&lt;"
+		    />
+	        
+			<TextView  
+			    style="@style/ScheduleDate"
+			    android:id="@+id/activityTitle"
+		    />
+			
+			<TextView  
+			    style="@style/ScheduleDate"
+			    android:id="@+id/next"
+			    android:text="&gt;"
+		    />
+		</TableRow>
+	</TableLayout>
+    
+    <ListView android:id="@+id/listview"
+               android:layout_width="fill_parent"
+               android:layout_height="fill_parent"
+               android:background="#ffffff"
+               android:layout_weight="1"
+			android:focusable="true"
+			android:listSelector="@drawable/selector_listitem"/>
+
+     <TextView android:id="@+id/empty"
+               android:layout_width="fill_parent"
+               android:layout_height="fill_parent"
+               android:layout_weight="1"
+               android:background="#ffffff"
+               android:textSize="18sp"
+				android:gravity="center"
+				android:padding="10dp"
+				android:visibility="gone"
+               android:text="@string/msg_noclasses"/>
+     
+     <TextView
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:layout_weight="0"
+               android:background="@android:color/darker_gray"
+               android:gravity="center"
+               android:textColor="@android:color/white"
+				android:padding="2px"
+               android:id="@+id/updated"/>
+</LinearLayout>

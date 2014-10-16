@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="coursesName">
+	    <item>Applied Bioanalytical Sciences</item>
+		<item>Advanced Electronic Engineering</item>
+		<item>Information Management</item>
+		<item>Architecture</item>
+		<item>Advanced Security Engineering</item>
+		<item>Exhibition Design</item>
+		<item>Construction Design and Economics</item>
+		<item>Biomedical Science</item>
+		<item>Construction Management and Engineering</item>
+		<item>Banking and Insurance Industry</item>
+		<item>Communication, Media and Interaction Design</item>
+        <item>Content Strategy</item>
+        <item>Public Communication</item>
+		<item>German as a Foreign Language</item>
+		<item>Dietetics and Nutrition</item>
+        <item>Electronics and Computer Engineering</item>
+		<item>eHealth Bachelor</item>
+		<item>eHealth Master</item>
+		<item>Engineering and Production Management</item>
+		<item>European Project and Public Management</item>
+		<item>Occupational Therapy</item>
+		<item>Electronics and Technology Management</item>
+		<item>Energy, Transport and Environmental Management</item>
+		<item>Vehicle Technology</item>
+		<item>Global Business Program</item>
+        <item>e-Health (Bachelor)</item>
+		<item>Health Management in Tourism</item>
+		<item>Health Management in Tourism</item>
+		<item>Midwifery</item>
+		<item>International Hospitality and Spa Management</item>
+		<item>Industrial Design</item>
+		<item>Industrial Design</item>
+		<item>International Industrial Management (part-time)</item>
+		<item>International Industrial Management (full-time)</item>
+		<item>Information Management</item>
+        <item>IT &amp; Mobile Security</item>
+		<item>Information Design</item>
+		<item>IT-Law and Management</item>
+		<item>International Supply Management</item>
+		<item>Internet Technology</item>
+		<item>Industrial Management (part-time)</item>
+		<item>Industrial Management (full-time)</item>
+		<item>Journalism and Public Relations</item>
+		<item>Luftfahrt/Aviation</item>
+		<item>Sustainable Food Management</item>
+		<item>Logopedics</item>
+		<item>Automotive Engineering</item>
+		<item>Luftfahrt/Aviation</item>
+		<item>Business in Emerging Markets</item>
+		<item>Energy and Transport Management</item>
+		<item>International Management</item>
+        <item>Mass Spectrometry and Molecular Analysis</item>
+		<item>Applied Nutrition Medicine</item>
+		<item>Physiotherapy</item>
+		<item>Production Technology and Organisation</item>
+		<item>Radiography</item>
+		<item>Social Work</item>
+		<item>Qualification course for university entrance Graz</item>
+		<item>Qualification course for university entrance Kapfenberg</item>
+		<item>Social Work</item>
+		<item>Software Design</item>
+	</string-array>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference android:title="@string/lbl_username" android:key="username" android:summary="@string/desc_username"></EditTextPreference>
+    <EditTextPreference android:title="@string/lbl_password" android:key="password" android:summary="@string/desc_password" android:password="true"></EditTextPreference>
+	<ListPreference
+	     android:key="course"
+	     android:title="@string/lbl_course"
+	     android:entries="@array/courses"
+	     android:entryValues="@array/courses"
+	/>
+	<ListPreference
+	     android:key="year"
+	     android:title="@string/lbl_year"
+	     android:entries="@array/years"
+	     android:entryValues="@array/years"
+	/>
+	<Preference 
+         android:title="@string/lblHiddenTypes"
+         android:key="hiddengroups"
+         />
+</PreferenceScreen>

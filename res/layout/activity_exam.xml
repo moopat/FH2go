@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    >
+<TextView  
+    style="@style/HeaderText"
+    android:id="@+id/examTitle"
+    />
+<ScrollView 
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	>
+<LinearLayout android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    >
+<TableLayout 
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:stretchColumns="1"
+	android:layout_marginBottom="10sp"
+	>
+	<TableRow>
+		<TextView
+			android:padding="5dp"
+			android:text="@string/lbl_date"
+			android:textStyle="bold"
+			android:textColor="#0e0e0e"
+		/>
+		<TextView
+			android:padding="5dp"
+			android:id="@+id/date"
+			android:textColor="#0e0e0e"
+		/>
+	</TableRow>
+	<TableRow android:background="#eeeeee">
+		<TextView
+			android:padding="5dp"
+			android:text="@string/lbl_deadline"
+			android:textStyle="bold"
+			android:textColor="#0e0e0e"
+		/>
+		<TextView
+			android:padding="5dp"
+			android:id="@+id/deadline"
+			android:textColor="#0e0e0e"
+		/>
+	</TableRow>
+	<TableRow>
+		<TextView
+			android:padding="5dp"
+			android:text="@string/lbl_type"
+			android:textStyle="bold"
+			android:textColor="#0e0e0e"
+		/>
+		<TextView
+			android:padding="5dp"
+			android:id="@+id/type"
+			android:textColor="#0e0e0e"
+		/>
+	</TableRow>
+	<TableRow android:background="#eeeeee">
+		<TextView
+			android:padding="5dp"
+			android:text="@string/lbl_mode"
+			android:textStyle="bold"
+			android:textColor="#0e0e0e"
+		/>
+		<TextView
+			android:padding="5dp"
+			android:id="@+id/mode"
+			android:textColor="#0e0e0e"
+		/>
+	</TableRow>
+	<TableRow>
+		<TextView
+			android:padding="5dp"
+			android:text="@string/lbl_status"
+			android:textStyle="bold"
+			android:textColor="#0e0e0e"
+		/>
+		<TextView
+			android:padding="5dp"
+			android:id="@+id/status"
+			android:textColor="#0e0e0e"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scrollHorizontally="false"
+            android:singleLine="false"
+            android:layout_weight="1"
+		/>
+	</TableRow>
+	<TableRow android:background="#eeeeee">
+		<TextView
+			android:padding="5dp"
+			android:text="@string/lbl_note"
+			android:textStyle="bold"
+			android:textColor="#0e0e0e"
+		/>
+		<TextView
+			android:padding="5dp"
+			android:id="@+id/note"
+			android:textColor="#0e0e0e"
+			android:singleLine="false"
+			android:scrollHorizontally="false"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+		/>
+	</TableRow>
+	</TableLayout>
+	
+	<Button
+		android:text="@string/lbl_signup"
+		android:id="@+id/btn_signon"
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:background="@drawable/selector_button_gray"
+		style="@style/ButtonText"
+	/>
+</LinearLayout>
+</ScrollView>
+</LinearLayout>

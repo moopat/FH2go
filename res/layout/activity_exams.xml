@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/linearLayout1" 
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent" 
+	android:orientation="vertical">
+	<TextView  
+	    style="@style/HeaderText"
+	    android:id="@+id/activityTitle"
+	    android:text="@string/lbl_exams"
+    />
+    <ListView 
+        android:id="@android:id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#ffffff"
+        android:layout_weight="1"
+        android:drawSelectorOnTop="false"/>
+
+     <TextView
+         android:id="@android:id/empty"
+         style="@style/EmptyView"
+         android:layout_weight="1"
+         android:text="@string/msg_noexams"/>
+     
+     <TextView
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="0"
+			android:background="@color/joanneumred"
+			android:gravity="center"
+			android:textColor="@android:color/white"
+			android:text="@string/txtSignupFail"
+			android:padding="10dp"/>
+</LinearLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+	<style name="HeaderText">
+	    <item name="android:layout_width">fill_parent</item>
+	    <item name="android:layout_height">wrap_content</item>
+	    <item name="android:textColor">#ffffff</item>
+	    <item name="android:gravity">center</item>
+	    <item name="android:textSize">23dp</item>
+	    <item name="android:textStyle">bold</item>
+	    <item name="android:background">@drawable/bg_red</item>
+	    <item name="android:padding">10dp</item>
+	</style>
+	
+	<style name="ScheduleDate">
+	    <item name="android:layout_width">fill_parent</item>
+	    <item name="android:layout_height">wrap_content</item>
+	    <item name="android:textColor">#ffffff</item>
+	    <item name="android:gravity">center</item>
+	    <item name="android:textSize">20dp</item>
+	    <item name="android:padding">8dp</item>
+	</style>
+	
+    <style name="ButtonText">
+	    <item name="android:layout_width">fill_parent</item>
+	    <item name="android:layout_height">wrap_content</item>
+	    <item name="android:textColor">#ffffff</item>
+	    <item name="android:gravity">center</item>
+	    <item name="android:layout_margin">3dp</item>
+	    <item name="android:textSize">18dp</item>
+	</style>
+	
+    <style name="EmptyView">
+        <item name="android:layout_width">fill_parent</item>
+	    <item name="android:layout_height">fill_parent</item>
+	    <item name="android:textSize">18dp</item>
+	    <item name="android:padding">8dp</item>
+	    <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Error">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:background">@drawable/bg_red</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
+</resources>

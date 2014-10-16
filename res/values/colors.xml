@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="joanneumgrey">#e4e4e4</color>
+    <color name="joanneumdarkgrey">#c4c4c4</color>
+    
+	<color name="joanneumred">#d4002d</color>
+	<color name="joanneumdarkred">#c9002b</color>
+	
+	<color name="joanneumyellow">#faba00</color>
+	<color name="joanneumdarkyellow">#d69f00</color>
+	
+	<color name="joanneumgreen">#9bbd0f</color>
+	<color name="joanneumdarkgreen">#8aa80d</color>
+	
+	<color name="joanneumblue">#0080b9</color>
+	<color name="joanneumdarkblue">#006a99</color>
+	
+	<color name="joanneumorange">#ef7f00</color>
+	<color name="joanneumdarkorange">#d97300</color>
+	
+	<color name="maingradientstart">#e9e9e9</color>
+	<color name="maingradientend">#d0d0d0</color>
+
+<color name="black">#0f0f0f</color>
+<color name="white">#ffffff</color>
+
+<!--  Colors for the timetable. -->
+<color name="red">#fe2e2e</color>
+<color name="orange">#fe642e</color>
+<color name="lightorange">#fe9a2e</color>
+<color name="darkyellow">#facc2e</color>
+<color name="yellow">#f7fe2e</color>
+<color name="greenyellow">#c8fe2e</color>
+<color name="lightgreen">#9afe3e</color>
+<color name="froggreen">#64fe2e</color>
+<color name="green">#2efe2e</color>
+<color name="darkgreen">#2efe64</color>
+<color name="turquoise">#2efe9a</color>
+<color name="bluegreen">#2efec8</color>
+<color name="iceblue">#2efef7</color>
+<color name="lightblue">#2eccfa</color>
+<color name="blue">#2e9afe</color>
+<color name="oceanblue">#2e64fe</color>
+<color name="darkblue">#2e2efe</color>
+<color name="darkpurple">#642efe</color>
+<color name="purple">#9a2efe</color>
+<color name="darkpink">#cc2efa</color>
+<color name="pink">#fe2ef7</color>
+<color name="ultrapink">#fe2ec8</color>
+<color name="girlypink">#fe2e9a</color>
+<color name="redpink">#fe2e64</color>
+<color name="gray">#a4a4a4</color>
+<color name="blue1">#2E85FE</color>
+<color name="pink1">#FE2E96</color>
+<color name="gold">#FEDF2E</color>
+</resources>
