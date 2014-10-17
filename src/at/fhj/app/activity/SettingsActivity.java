@@ -10,6 +10,7 @@ import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import at.fhj.app.R;
+import at.fhj.app.util.Configuration;
 import at.fhj.app.util.GroupFilter;
 
 /**
@@ -19,7 +20,7 @@ import at.fhj.app.util.GroupFilter;
  * 
  * @author Markus Deutsch <Markus.Deutsch.ITM09@fh-joanneum.at>
  */
-public class SettingsActivity extends PreferenceActivity implements OnPreferenceClickListener {
+public class SettingsActivity extends PreferenceActivity implements OnPreferenceClickListener, SharedPreferences.OnSharedPreferenceChangeListener {
 	
 	private Preference groups, course, year;
 	private SharedPreferences p;
@@ -29,13 +30,14 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
 		
 		addPreferencesFromResource(R.xml.settings);
 		
-		groups = (Preference) findPreference("hiddengroups");
-		course = (Preference) findPreference("course");
-		year = (Preference) findPreference("year");
+		groups = findPreference("hiddengroups");
+		course = findPreference(Configuration.PREFERENCE_COURSE);
+		year = findPreference(Configuration.PREFERENCE_YEAR);
 		
         groups.setOnPreferenceClickListener(this);
         
         p = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        p.registerOnSharedPreferenceChangeListener(this);
 	}
 
 	public boolean onPreferenceClick(Preference preference) {
@@ -46,8 +48,8 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
 	
 	private void updateDescriptions(){
 		
-		course.setSummary(p.getString("course", "N/A"));
-		year.setSummary(p.getString("year", "N/A"));
+		course.setSummary(p.getString(Configuration.PREFERENCE_COURSE, "N/A"));
+		year.setSummary(p.getString(Configuration.PREFERENCE_YEAR, "N/A"));
 		
 		// Filters
 		GroupFilter azm = new GroupFilter(getApplicationContext());
@@ -71,4 +73,14 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
 		updateDescriptions();
 	}
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        p.unregisterOnSharedPreferenceChangeListener(this);
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
+        updateDescriptions();
+    }
 }
