@@ -123,5 +123,11 @@ public class Configuration {
 		SIMPLE_DATE_TIME.setTimeZone(tz);
 		SIMPLE_DATETIME.setTimeZone(tz);
 	}
+
+    /**
+     * SharedPreference Keys
+     */
+    public static final String PREFERENCE_COURSE = "course";
+    public static final String PREFERENCE_YEAR = "year";
 	
 }

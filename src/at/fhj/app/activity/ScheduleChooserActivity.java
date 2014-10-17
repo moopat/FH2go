@@ -2,7 +2,9 @@ package at.fhj.app.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -12,6 +14,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import at.fhj.app.R;
+import at.fhj.app.util.Configuration;
 
 /**
  * This class lets the user choose which class' schedule he wants to see.
@@ -23,8 +26,12 @@ import at.fhj.app.R;
  * @author Markus Deutsch <Markus.Deutsch.ITM09@fh-joanneum.at>
  */
 public class ScheduleChooserActivity extends Activity implements OnClickListener, OnItemSelectedListener {
+
+    public static final int REQUEST_CODE_SCHEDULE = 100;
+
 	private Button button;
 	private Spinner courseSpinner, yearSpinner;
+    private SharedPreferences prefs;
 	
 	private String defaultCourse;
 	private String defaultYear;
@@ -34,18 +41,14 @@ public class ScheduleChooserActivity extends Activity implements OnClickListener
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_chschedule);
+
+        prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		
 		/**
 		 * Retrieve extras if available
 		 */
-		try {
-			Bundle bundle = this.getIntent().getExtras();
-			defaultCourse = bundle.getString("course");
-			defaultYear = bundle.getString("year");
-		} catch (Exception e) {
-			defaultCourse = "";
-			defaultYear = "";
-		}
+        defaultCourse = prefs.getString(Configuration.PREFERENCE_COURSE, "");
+        defaultYear = prefs.getString(Configuration.PREFERENCE_YEAR, "");
 		
 		/**
 		 * This TextView is the textual representation of the currently selected course
@@ -98,14 +101,11 @@ public class ScheduleChooserActivity extends Activity implements OnClickListener
 		} else {
 			year = getResources().getStringArray(R.array.years)[yearSpinner.getSelectedItemPosition()];
 		}
-		
-		//Log.i("ScheduleChooserActivity", "Chosen " + course + year + " for schedule display.");
-		Bundle bundle = new Bundle();
-		bundle.putString("course", course);
-		bundle.putString("year", year);
-		Intent intent = new Intent(this, ScheduleActivity.class);
-		intent.putExtras(bundle);
-		startActivityForResult(intent, 0);
+
+        prefs.edit().putString(Configuration.PREFERENCE_COURSE, course).putString(Configuration.PREFERENCE_YEAR, year).commit();
+
+        setResult(RESULT_OK);
+		finish();
 	}
 	
 	/**
@@ -193,5 +193,10 @@ public class ScheduleChooserActivity extends Activity implements OnClickListener
 		// TODO Auto-generated method stub
 		
 	}
-	
+
+    @Override
+    public void onBackPressed() {
+        setResult(RESULT_CANCELED);
+        super.onBackPressed();
+    }
 }

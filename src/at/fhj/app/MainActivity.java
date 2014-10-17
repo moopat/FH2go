@@ -24,6 +24,7 @@ import android.widget.Toast;
 import at.fhj.app.activity.*;
 import at.fhj.app.model.NavigationItem;
 import at.fhj.app.retriever.FHPIRetriever;
+import at.fhj.app.util.Configuration;
 import at.fhj.app.util.ConnectionInformation;
 
 /**
@@ -128,21 +129,8 @@ public class MainActivity extends Activity implements OnItemClickListener {
 		 * selector screen.
 		 */
 		if(items.get(arg2).getId() == ACTION_SCHEDULE){
-			if(!validateCourseData()){
-				Intent intent = new Intent(this, ScheduleChooserActivity.class);
-				startActivity(intent);
-			} else {
-				String course = prefs.getString("course", "");
-				String year = prefs.getString("year", "");
-				
-				Bundle bundle = new Bundle();
-				bundle.putString("course", course);
-				bundle.putString("year", year);
-				Intent intent = new Intent(this, ScheduleActivity.class);
-				intent.putExtras(bundle);
-				startActivityForResult(intent, 0);
-			}
-			
+            Intent intent = new Intent(this, ScheduleHostActivity.class);
+            startActivity(intent);
 		}
 		
 	}
