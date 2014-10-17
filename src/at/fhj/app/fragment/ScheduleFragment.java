@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.*;
 import android.widget.*;
 import at.fhj.app.R;
@@ -152,6 +153,7 @@ public class ScheduleFragment extends Fragment implements AdapterView.OnItemClic
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
+        Log.e("Schedule", "onContextItemSelected");
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         switch (item.getItemId()) {
             case R.id.menu_hide:
@@ -161,7 +163,7 @@ public class ScheduleFragment extends Fragment implements AdapterView.OnItemClic
                     updateDataset();
                     populateList();
                 } catch (Exception e) {
-                    // Something went wrong
+                    e.printStackTrace();
                 }
                 return true;
             default:
