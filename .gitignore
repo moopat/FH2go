@@ -30,3 +30,7 @@ Thumbs.db
 #.idea/workspace.xml - remove # and delete .idea if it better suit your needs.
 .gradle
 build/
+
+# app/gradle.properties holds sensitive information. only the data for the debug store (included in
+# the repo) is committed.
+app/gradle.properties
