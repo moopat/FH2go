@@ -23,8 +23,8 @@ android {
         applicationId "at.fhj.app"
         minSdkVersion 7
         targetSdkVersion 22
-        versionCode 29
-        versionName "1.7.2"
+        versionCode 30
+        versionName "1.7.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
