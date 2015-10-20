@@ -8,7 +8,6 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
@@ -16,6 +15,9 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.util.Calendar;
+
 import at.fhj.app.R;
 import at.fhj.app.adapter.DegreeProgrammeAdapter;
 import at.fhj.app.util.Configuration;
@@ -45,6 +47,8 @@ public class ScheduleChooserActivity extends Activity implements OnClickListener
 	private AutoCompleteTextView actCourse;
 
 	private DegreeProgrammeAdapter degreeProgrammeAdapter;
+
+	private static final int NUMBER_OF_YEARS = 5;
 	
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
@@ -93,7 +97,8 @@ public class ScheduleChooserActivity extends Activity implements OnClickListener
 	     * @TODO Make years dynamic.
 	     */
 	    yearSpinner = (Spinner) findViewById(R.id.year_spinner);
-	    ArrayAdapter<CharSequence> yearAdapter = ArrayAdapter.createFromResource(this, R.array.years, android.R.layout.simple_spinner_item);
+		ArrayAdapter<CharSequence> yearAdapter = new ArrayAdapter<CharSequence>(this,android.R
+				.layout.simple_spinner_item, getYearsForDegreeProgramme(defaultCourse));
 	    yearAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 	    yearSpinner.setAdapter(yearAdapter);
 	    yearSpinner.setSelection(this.getYearPosition(defaultYear));
@@ -117,12 +122,7 @@ public class ScheduleChooserActivity extends Activity implements OnClickListener
 		String course = actCourse.getText().toString();
 		String year;
 		
-		// DAF Workaround
-		if(course.equalsIgnoreCase("DAF")){
-			year = getResources().getStringArray(R.array.daf)[yearSpinner.getSelectedItemPosition()];
-		} else {
-			year = getResources().getStringArray(R.array.years)[yearSpinner.getSelectedItemPosition()];
-		}
+		year = getYearsForDegreeProgramme(course)[yearSpinner.getSelectedItemPosition()];
 
         prefs.edit().putString(Configuration.PREFERENCE_COURSE, course).putString(Configuration.PREFERENCE_YEAR, year).commit();
 
@@ -137,7 +137,7 @@ public class ScheduleChooserActivity extends Activity implements OnClickListener
 	 * static xml array file.
 	 */
 	public int getYearPosition(String year){
-		String[] years = this.getResources().getStringArray(R.array.years);
+		String[] years = getYearsForDegreeProgramme(actCourse.getText().toString());
 		
 		for(int i = 0; i < years.length; i++){
 			if(years[i].equals(year)){
@@ -147,7 +147,7 @@ public class ScheduleChooserActivity extends Activity implements OnClickListener
 		
 		return 0;
 	}
-	
+
 	/**
 	 * Update Selected Course TextView with title of selected course.
 	 * Update year selection for special courses like DAF.
@@ -160,24 +160,21 @@ public class ScheduleChooserActivity extends Activity implements OnClickListener
 		 * Display full name of course
 		 */
 		selectedCourse.setText(degreeProgrammeAdapter.getCourseNameForAbbreviation(course));
-		
+
 		/**
 		 * Create year adapter depending on selected course
 		 */
 		ArrayAdapter<CharSequence> yearAdapter;
 		int previousYear = yearSpinner.getSelectedItemPosition();
-		int yearAdapterResource = R.array.years;
-		
-		if(course.equalsIgnoreCase("DAF")){
-		    yearAdapterResource = R.array.daf;
-		}
-		
-		yearAdapter = ArrayAdapter.createFromResource(this, yearAdapterResource, android.R.layout.simple_spinner_item);
+
+		yearAdapter = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item,
+				getYearsForDegreeProgramme(course));
+
 	    yearAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 	    yearSpinner.setAdapter(yearAdapter);
 
 	    try {
-	    	String[] array = getResources().getStringArray(yearAdapterResource);
+	    	String[] array = getYearsForDegreeProgramme(course);
 	    	if(previousYear < array.length){
 	    		yearSpinner.setSelection(previousYear);
 	    	}
@@ -185,6 +182,28 @@ public class ScheduleChooserActivity extends Activity implements OnClickListener
 	    	//s2.setSelection(0);
 	    }
 	    
+	}
+
+	private String[] getYearsForDegreeProgramme(String abbreviation){
+		if("DAF".equalsIgnoreCase(abbreviation)){
+			return new String[]{"9001", "9002", "9003"};
+		}
+
+		String[] years = new String[NUMBER_OF_YEARS];
+		int offset = (getCurrentYear() - NUMBER_OF_YEARS) + 1;
+		for(int i = 0; i < NUMBER_OF_YEARS; i++){
+			years[i] = String.valueOf(offset + i);
+		}
+
+		return years;
+	}
+
+	private int currentYear;
+	private int getCurrentYear() {
+		if(currentYear == 0){
+			currentYear = Calendar.getInstance().get(Calendar.YEAR);
+		}
+		return currentYear;
 	}
 
 	/**

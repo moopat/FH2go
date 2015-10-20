@@ -33,7 +33,7 @@ public class SettingsActivity extends PreferenceActivity implements OnPreference
 		groups = findPreference("hiddengroups");
 		course = findPreference(Configuration.PREFERENCE_COURSE);
 		year = findPreference(Configuration.PREFERENCE_YEAR);
-		
+
         groups.setOnPreferenceClickListener(this);
         
         p = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
