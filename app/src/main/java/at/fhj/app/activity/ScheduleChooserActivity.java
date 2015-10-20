@@ -4,15 +4,20 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import at.fhj.app.R;
+import at.fhj.app.adapter.DegreeProgrammeAdapter;
 import at.fhj.app.util.Configuration;
 
 /**
@@ -24,18 +29,22 @@ import at.fhj.app.util.Configuration;
  * 
  * @author Markus Deutsch <Markus.Deutsch.ITM09@fh-joanneum.at>
  */
-public class ScheduleChooserActivity extends Activity implements OnClickListener, OnItemSelectedListener {
+public class ScheduleChooserActivity extends Activity implements OnClickListener,
+		OnItemSelectedListener {
 
     public static final int REQUEST_CODE_SCHEDULE = 100;
 
 	private Button button;
-	private Spinner courseSpinner, yearSpinner;
+	private Spinner yearSpinner;
     private SharedPreferences prefs;
 	
 	private String defaultCourse;
 	private String defaultYear;
 	
 	private TextView selectedCourse;
+	private AutoCompleteTextView actCourse;
+
+	private DegreeProgrammeAdapter degreeProgrammeAdapter;
 	
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
@@ -55,15 +64,29 @@ public class ScheduleChooserActivity extends Activity implements OnClickListener
 		selectedCourse = (TextView) findViewById(R.id.selected_course);
 
 		/**
-		 * Spinner for course.
-		 * @TODO Make courses dynamic.
+		 * Course Selection (Autocomplete)
 		 */
-	    courseSpinner = (Spinner) findViewById(R.id.spinner);
-	    ArrayAdapter<CharSequence> courseAdapter = ArrayAdapter.createFromResource(this, R.array.courses, android.R.layout.simple_spinner_item);
-	    courseAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-	    courseSpinner.setAdapter(courseAdapter);
-	    courseSpinner.setSelection(this.getCoursePosition(defaultCourse));
-	    courseSpinner.setOnItemSelectedListener(this);
+		degreeProgrammeAdapter = new DegreeProgrammeAdapter(this);
+		actCourse = (AutoCompleteTextView) findViewById(R.id.actCourse);
+		actCourse.setAdapter(degreeProgrammeAdapter);
+		actCourse.setText(defaultCourse);
+		actCourse.setOnItemSelectedListener(this);
+		actCourse.addTextChangedListener(new TextWatcher() {
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+			}
+
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+			}
+
+			@Override
+			public void afterTextChanged(Editable s) {
+				updateSelectedCourseTextView();
+			}
+		});
 
 	    /**
 	     * Spinner for year.
@@ -91,7 +114,7 @@ public class ScheduleChooserActivity extends Activity implements OnClickListener
 	 * We don't put a date so "today" will be assumed.
 	 */
 	public void onClick(View v) {
-		String course = getResources().getStringArray(R.array.courses)[courseSpinner.getSelectedItemPosition()];
+		String course = actCourse.getText().toString();
 		String year;
 		
 		// DAF Workaround
@@ -105,24 +128,6 @@ public class ScheduleChooserActivity extends Activity implements OnClickListener
 
         setResult(RESULT_OK);
 		finish();
-	}
-	
-	/**
-	 * Get the position of a course in the array.
-	 * 
-	 * Returns the position of the course in the
-	 * static xml array file.
-	 */
-	public int getCoursePosition(String abbrev){
-		String[] courses = this.getResources().getStringArray(R.array.courses);
-		
-		for(int i = 0; i < courses.length; i++){
-			if(courses[i].equals(abbrev)){
-				return i;
-			}
-		}
-		
-		return 0;
 	}
 	
 	/**
@@ -148,21 +153,22 @@ public class ScheduleChooserActivity extends Activity implements OnClickListener
 	 * Update year selection for special courses like DAF.
 	 */
 	public void updateSelectedCourseTextView(){
-		
+
+		String course = actCourse.getText().toString();
+
 		/**
 		 * Display full name of course
 		 */
-		selectedCourse.setText(this.getResources().getStringArray(R.array.coursesName)[courseSpinner.getSelectedItemPosition()]);
+		selectedCourse.setText(degreeProgrammeAdapter.getCourseNameForAbbreviation(course));
 		
 		/**
 		 * Create year adapter depending on selected course
 		 */
 		ArrayAdapter<CharSequence> yearAdapter;
-		String course = getResources().getStringArray(R.array.courses)[courseSpinner.getSelectedItemPosition()];
 		int previousYear = yearSpinner.getSelectedItemPosition();
 		int yearAdapterResource = R.array.years;
 		
-		if(course != null && course.equalsIgnoreCase("DAF")){
+		if(course.equalsIgnoreCase("DAF")){
 		    yearAdapterResource = R.array.daf;
 		}
 		
@@ -198,4 +204,5 @@ public class ScheduleChooserActivity extends Activity implements OnClickListener
         setResult(RESULT_CANCELED);
         super.onBackPressed();
     }
+
 }
