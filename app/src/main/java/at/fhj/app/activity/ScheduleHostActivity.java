@@ -224,10 +224,17 @@ public class ScheduleHostActivity extends FragmentActivity implements OnClickLis
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(requestCode == ScheduleChooserActivity.REQUEST_CODE_SCHEDULE && resultCode == RESULT_OK){
-            lastPagerPosition = vpHost.getCurrentItem();
-            updateCourse();
-            initSchedule();
+        if(requestCode == ScheduleChooserActivity.REQUEST_CODE_SCHEDULE){
+			switch(resultCode){
+				case RESULT_OK:
+					lastPagerPosition = vpHost.getCurrentItem();
+					updateCourse();
+					initSchedule();
+					break;
+				case RESULT_CANCELED:
+					finish();
+			}
+
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
