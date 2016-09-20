@@ -81,7 +81,7 @@ public class MainActivity extends Activity implements OnItemClickListener {
 		items.add(new NavigationItem(ACTION_MARKS, R.drawable.btn_ele_marks2, R.string.lbl_marks));
 		items.add(new NavigationItem(ACTION_EXAMS, R.drawable.btn_ele_exams, R.string.lbl_exams));
 		
-		items.add(new NavigationItem(ACTION_NEWS, R.drawable.btn_ele_news, R.string.lbl_news));
+		//items.add(new NavigationItem(ACTION_NEWS, R.drawable.btn_ele_news, R.string.lbl_news));
 		items.add(new NavigationItem(ACTION_ABOUT, R.drawable.btn_ele_help, R.string.lbl_help));
 		items.add(new NavigationItem(ACTION_SETTINGS, R.drawable.btn_ele_settings, R.string.lbl_settings));
 	}
