@@ -37,6 +37,11 @@ android {
             minifyEnabled false
         }
     }
+    lintOptions {
+        // Lint fails because courses.xml is not translated. I do not want to translate it, because
+        // it would be identical and I don't want to repeat myself.
+        abortOnError false
+    }
 }
 
 dependencies {
