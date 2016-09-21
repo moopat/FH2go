@@ -8,13 +8,7 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.xml.sax.InputSource;
@@ -25,6 +19,7 @@ import java.io.StringReader;
 import java.util.ArrayList;
 
 import at.fhj.app.R;
+import at.fhj.app.adapter.MarksAdapter;
 import at.fhj.app.model.Mark;
 import at.fhj.app.model.MarkContentHandler;
 import at.fhj.app.retriever.FHPIRetriever;
@@ -42,9 +37,6 @@ public class MarksActivity extends Activity implements RequestFinishedListener {
     private ArrayList<Object> listitems;
     public ProgressDialog prog;
     private SharedPreferences prefs;
-
-    private static final int TYPE_SEPARATOR = 0;
-    private static final int TYPE_MARK = 1;
 
     protected void onCreate(Bundle savedInstanceState) {
         // Set property for XML parser
@@ -101,7 +93,7 @@ public class MarksActivity extends Activity implements RequestFinishedListener {
     @Override
     public void onSuccess(ArrayList resultList) {
         listview = (ListView) findViewById(R.id.listview);
-        listview.setAdapter(new MarksAdapter());
+        listview.setAdapter(new MarksAdapter(listitems, getApplicationContext()));
     }
 
     @Override
@@ -132,98 +124,6 @@ public class MarksActivity extends Activity implements RequestFinishedListener {
          */
         if (resultCode == RESULT_CANCELED) {
             finish();
-        }
-
-    }
-
-    /**
-     * MarksAdapter is used to display Marks in a ListView.
-     *
-     * @author Markus Deutsch <Markus.Deutsch.ITM09@fh-joanneum.at>
-     */
-    private class MarksAdapter extends BaseAdapter {
-        private Mark current;
-
-        public int getCount() {
-            return listitems.size();
-        }
-
-        public Object getItem(int position) {
-            return listitems.get(position);
-        }
-
-        public long getItemId(int position) {
-            return position;
-        }
-
-        public int getItemViewType(int position) {
-            return (listitems.get(position) instanceof String) ? TYPE_SEPARATOR : TYPE_MARK;
-        }
-
-        public int getViewTypeCount() {
-            return 2;
-        }
-
-        public boolean isEnabled(int position) {
-            return getItemViewType(position) != TYPE_SEPARATOR;
-        }
-
-        public View getView(int position, View convertView, ViewGroup parent) {
-            int img = 0;
-            final int type = getItemViewType(position);
-
-            /**
-             * Set a type flag.
-             */
-            if (convertView == null) {
-                final LayoutInflater inflater = LayoutInflater.from(MarksActivity.this);
-                final int layout = type == TYPE_SEPARATOR ? R.layout.item_separator : R.layout.item_mark;
-                convertView = inflater.inflate(layout, parent, false);
-            }
-
-            if (type == TYPE_SEPARATOR) {
-                /**
-                 * If it's a separator (and the array item is a String)
-                 * set the array text (term) as content of the separator.
-                 */
-                ((TextView) convertView.findViewById(R.id.separator)).setText((String) listitems.get(position));
-            } else {
-                /**
-                 * Populate the regular mark item layout.
-                 */
-                current = (Mark) getItem(position);
-                TextView course = ((TextView) convertView.findViewById(R.id.item1));
-                ImageView mark = ((ImageView) convertView.findViewById(R.id.mark));
-
-                /**
-                 * Depending on the mark, there's a different drawable.
-                 */
-                switch (current.getMark()) {
-                    case 1:
-                        img = R.drawable.mark_1;
-                        break;
-                    case 2:
-                        img = R.drawable.mark_2;
-                        break;
-                    case 3:
-                        img = R.drawable.mark_3;
-                        break;
-                    case 4:
-                        img = R.drawable.mark_4;
-                        break;
-                    case 5:
-                        img = R.drawable.mark_5;
-                        break;
-                    default:
-                        img = R.drawable.star;
-                }
-
-                course.setText(current.getCourse());
-                mark.setImageResource(img);
-            }
-
-
-            return convertView;
         }
 
     }
