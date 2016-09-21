@@ -208,6 +208,8 @@ public class MarksActivity extends Activity implements RequestFinishedListener {
 					case 5:
 						img = R.drawable.mark_5;
 						break;
+                    default:
+                        img = R.drawable.star;
 				}
 
 				course.setText(current.getCourse());
