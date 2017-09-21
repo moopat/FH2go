@@ -82,41 +82,6 @@
 		    	android:layout_height="wrap_content"
 		    	android:text="@string/txt_about"
 			/>
-		<Button
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:id="@+id/help"
-			android:text="@string/lbl_help"
-			android:background="@drawable/selector_button_blue"
-			style="@style/ButtonText"
-			/>
-		
-		<Button
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:id="@+id/faq"
-			android:text="@string/lbl_faq"
-			android:background="@drawable/selector_button_blue"
-			style="@style/ButtonText"
-			/>
-			
-		<Button
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:id="@+id/mail"
-			android:text="@string/lbl_mail"
-			android:background="@drawable/selector_button_blue"
-			style="@style/ButtonText"
-			/>
-			
-		<Button
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:id="@+id/facebook"
-			android:text="@string/lbl_facebook"
-			android:background="@drawable/selector_button_blue"
-			style="@style/ButtonText"
-			/>
 	</LinearLayout>
 </ScrollView>
 </LinearLayout>

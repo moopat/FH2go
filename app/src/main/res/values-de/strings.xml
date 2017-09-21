@@ -37,9 +37,6 @@
     <string name="lbl_signup">Anmelden</string>
     <string name="lbl_nochangepermitted">Du kannst dich nicht mehr an- oder abmelden</string>
     <string name="lbl_changedate">Datum wechseln</string>
-    <string name="lbl_mail">Schreib uns ein E-Mail</string>
-    <string name="lbl_facebook">FH2go auf Facebook</string>
-    <string name="lbl_faq">FAQ</string>
     <string name="lblHideType">Gruppe ausblenden</string>
     <string name="lblHiddenTypes">Ausgeblendete Gruppen</string>
     <string name="lblNone">Keine</string>
@@ -51,16 +48,16 @@
     <string name="msgNoHiddenTypes">Es wurden keine Gruppen ausgeblendet.</string>
     <string name="lblAnd">und</string>
     <string name="lblOthers">weitere</string>
-    
+
     <string name="prog_wait">Bitte warten&#8230;</string>
-    
+
     <string name="exam_takenplace">Stattgefunden</string>
     <string name="exam_signedoff">Abgemeldet</string>
     <string name="exam_registered">Angemeldet</string>
     <string name="exam_notregistered">Nicht angemeldet</string>
     <string name="exam_signedoffbyoffice">Vom Sekretariat abgemeldet</string>
     <string name="exam_registeredbyoffice">Vom Sekretariat angemeldet</string>
-    
+
     <string name="msg_signedup">Du wurdest zur Prüfung angemeldet.</string>
     <string name="msg_signedoff">Du wurdest von der Prüfung abgemeldet.</string>
     <string name="msg_unknown">Unbekannt</string>
@@ -76,19 +73,20 @@
     <string name="msg_invaliddata">Deine Login-Daten sind nicht korrekt.</string>
     <string name="msg_incompleteserver">Du musst einen Server angeben.</string>
     <string name="msg_locked">Dein Benutzerkonto wurde gesperrt. Versuche es in 15 Minuten erneut.</string>
-    
-	<string name="lbl_lastupdate">Letztes Update:</string>
-	<string name="lbl_unknown">Unbekannt</string>
-    
+
+    <string name="lbl_lastupdate">Letztes Update:</string>
+    <string name="lbl_unknown">Unbekannt</string>
+
     <string name="about_lbl_developers">Entwickler</string>
     <string name="about_lbl_tutor">Betreuer</string>
     <string name="about_lbl_credits">Credits</string>
-    
+
     <string name="txtSignupFail">Bitte prüfe nach der Anmeldung zur Klausur ob der Stern hier gelb ist. Wenn nicht, verwende bitte die Webseite.</string>
-    <string name="txt_about">Solltest du Probleme mit der App haben oder Feedback geben wollen wende dich bitte per E-Mail oder Facebook an mich.\n\nAlle Angaben sind ohne Gewähr.</string>
+    <string name="txt_about">FH2go wurde 2012 im Rahmen meiner Projekt- und Bachelorarbeit am Studiengang Internettechnik entwickelt und bis 2017 unterstützt.\n\nDer Support für die App wurde eingestellt.\nAlle Angaben sind ohne Gewähr.</string>
 
     <string name="lbl_login">Login</string>
     <string name="info_login">Bitte melde dich mit deinen Actions-Anmeldedaten an.</string>
     <string name="login_incomplete">Gib bitte Benutzername und Passwort ein!</string>
     <string name="info_login_change">Du kannst deine Benutzerdaten in den Einstellungen ändern und löschen.</string>
+    <string name="support_expired">FH2go wird nicht mehr weiterentwickelt.</string>
 </resources>

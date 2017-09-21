@@ -57,13 +57,13 @@
     <string name="exam_notregistered">Not registered</string>
     <string name="exam_signedoffbyoffice">Signed off by office</string>
     <string name="exam_registeredbyoffice">Registered by office</string>
-    
+
     <string name="prog_wait">Please wait&#8230;</string>
-    
+
     <string name="about_lbl_developers">Developers</string>
     <string name="about_lbl_tutor">Tutor</string>
     <string name="about_lbl_credits">Credits</string>
-    
+
     <string name="msg_unknown">Unknown</string>
     <string name="msg_nomailintent">No application for sending emails could be found.</string>
     <string name="msg_prefschanged">Your changes have been saved.</string>
@@ -78,17 +78,18 @@
     <string name="msg_incompletedata">Please complete your login data.</string>
     <string name="msg_invaliddata">Your login data could not be verified.</string>
     <string name="msg_incompleteserver">Please specify a server.</string>
-	<string name="msg_locked">Your account has been locked. Check your login data and try again in 15 minutes.</string>
-	
-	<string name="lbl_lastupdate">Last update:</string>
-	<string name="lbl_unknown">unknown</string>
-	
-	<string name="txtSignupFail">After signing up for an exam, please check if the star has turned yellow. If not, please use the website instead.</string>
-	<string name="txt_about">Please share any thoughts, feedback, or problems you come across via e-mail or Facebook.\n\nErrors and omissions excepted.</string>
+    <string name="msg_locked">Your account has been locked. Check your login data and try again in 15 minutes.</string>
+
+    <string name="lbl_lastupdate">Last update:</string>
+    <string name="lbl_unknown">unknown</string>
+
+    <string name="txtSignupFail">After signing up for an exam, please check if the star has turned yellow. If not, please use the website instead.</string>
+    <string name="txt_about">FH2go was developed 2012 as part of my bachelor\'s thesis and supported until 2017.\n\nThe support for this app has expired.\nErrors and omissions excepted.</string>
 
     <string name="lbl_login">Login</string>
     <string name="info_login">Please enter the login data you use to log into Actions.</string>
     <string name="login_incomplete">Please enter username and password.</string>
     <string name="info_login_change">You can change or delete your credentials in the settings.</string>
+    <string name="support_expired">The support for FH2go has expired.</string>
 
 </resources>
