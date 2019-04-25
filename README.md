@@ -1,5 +1,7 @@
-# FH2go
+# FH2go (Deprecated)
 FH2go is an Android client for students of FH JOANNEUM to easily access marks, manage exams and keep an eye on the schedule.
+
+**There will be no further development.**
 
 ## Contributing
 You are very welcome to contribute to this project. Create an issue for whatever feature or bug you would like to work on (or pick an existing issue), fork the repo, do your work and eventually create a pull request. If you would like to work on a larger improvement it makes sense to first discuss the feature here on GitHub.
